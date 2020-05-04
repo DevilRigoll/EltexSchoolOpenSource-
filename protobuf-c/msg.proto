@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+message TopLevel {
+	oneof submessages {
+		TcpMsg tcpmsg = 1;
+		BroadcastMsg bcmsg = 2;
+	}
+}
+
+message TcpMsg {
+	required string text = 1;
+	required int32 len = 2;
+	required int32 T = 3;
+}
+
+message BroadcastMsg {
+	required string text = 1;
+}
